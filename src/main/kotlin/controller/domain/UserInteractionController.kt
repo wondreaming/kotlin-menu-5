@@ -10,4 +10,10 @@ class UserInteractionController(
     fun handleStartMsg() {
         outputView.showMsg("점심 메뉴 추천을 시작합니다.")
     }
+
+    fun handleCoachNames(): String {
+        outputView.showMsg("코치의 이름을 입력해 주세요. (, 로 구분)")
+        val coachNames = inputView.getInput()
+        return coachNames
+    }
 }
