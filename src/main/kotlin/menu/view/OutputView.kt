@@ -1,4 +1,4 @@
-package view
+package menu.view
 
 class OutputView {
     fun showMsg(msg: String) {

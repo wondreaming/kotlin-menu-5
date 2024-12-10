@@ -1,6 +1,6 @@
 package menu
 
-import controller.MenuController
+import menu.controller.MenuController
 
 fun main() {
     val menuController = MenuController()

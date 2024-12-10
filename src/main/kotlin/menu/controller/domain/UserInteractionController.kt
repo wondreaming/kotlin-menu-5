@@ -1,7 +1,7 @@
-package controller.domain
+package menu.controller.domain
 
-import view.InputView
-import view.OutputView
+import menu.view.InputView
+import menu.view.OutputView
 
 class UserInteractionController(
     private val inputView: InputView = InputView(),
@@ -12,7 +12,7 @@ class UserInteractionController(
     }
 
     fun handleCoachNames(): String {
-        outputView.showMsg("코치의 이름을 입력해 주세요. (, 로 구분)")
+        outputView.showMsg("\n코치의 이름을 입력해 주세요. (, 로 구분)")
         val coachNames = inputView.getInput()
         return coachNames
     }
