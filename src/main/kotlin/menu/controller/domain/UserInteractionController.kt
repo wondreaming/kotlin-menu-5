@@ -1,5 +1,6 @@
 package menu.controller.domain
 
+import menu.model.Coach
 import menu.view.InputView
 import menu.view.OutputView
 
@@ -15,5 +16,11 @@ class UserInteractionController(
         outputView.showMsg("\n코치의 이름을 입력해 주세요. (, 로 구분)")
         val coachNames = inputView.getInput()
         return coachNames
+    }
+
+    fun handleDislikeMenu(coach: Coach): String {
+        outputView.showMsg("${coach.name}가 못 먹는 메뉴를 입력해 주세요.")
+        val dislikeMenu = inputView.getInput()
+        return dislikeMenu
     }
 }

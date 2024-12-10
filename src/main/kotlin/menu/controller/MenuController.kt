@@ -11,6 +11,7 @@ class MenuController(
 ) {
     fun run() {
         val coaches = getCoachNames()
+        getCoachDislikeMenu(coaches)
     }
 
     private fun getCoachNames(): List<Coach> {
@@ -19,5 +20,11 @@ class MenuController(
         coachNamesValidator(coachNames)
         val coaches = coachNames.splitByComma().map { Coach(it) }
         return coaches
+    }
+
+    private fun getCoachDislikeMenu(coaches: List<Coach>) {
+        for (coach in coaches) {
+            val coachDislikeMenu = userInteractionController.handleDislikeMenu(coach)
+        }
     }
 }
