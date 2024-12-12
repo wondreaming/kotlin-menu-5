@@ -1,6 +1,7 @@
 package menu.controller.domain
 
 import menu.model.Coach
+import menu.model.Menu
 import menu.view.InputView
 import menu.view.OutputView
 
@@ -22,5 +23,14 @@ class UserInteractionController(
         outputView.showMsg("${coach}(이)가 못 먹는 메뉴를 입력해 주세요.")
         val dislikeMenu = inputView.getInput()
         return dislikeMenu
+    }
+
+    fun handleResult(coaches: List<Coach>, categories: List<Menu>) {
+        outputView.showMsg("메뉴 추천 결과입니다.\n[ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]")
+        outputView.showMsg("[ 카테고리 | ${categories.map { it.menuType }.joinToString(" | ")} ]")
+        for (coach in coaches) {
+            outputView.showMsg("[ ${coach.name} | ${coach.diet.joinToString(" | ")} ]")
+        }
+        outputView.showMsg("추천을 완료했습니다.")
     }
 }
